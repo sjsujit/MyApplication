@@ -2,7 +2,7 @@ package com.MyApplication.first;
 
 import java.time.LocalDate;
 
-public class Order{
+public class Order {
 	private Integer id;
 	private LocalDate date;
 	private double total_price;
@@ -63,7 +63,7 @@ public class Order{
 		return "Order [id=" + id + ", date=" + date + ", total_price=" + total_price + ", payment=" + payment
 				+ ", address=" + address + "]";
 	}
-
-
-
 }
+
+
+

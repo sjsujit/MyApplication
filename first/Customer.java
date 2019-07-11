@@ -1,6 +1,6 @@
 package com.MyApplication.first;
 
-public class Customer implements Comparable<Customer>{
+public class Customer {
 
 	private Integer id;
 	private String firstName;
@@ -48,10 +48,7 @@ public class Customer implements Comparable<Customer>{
 		this.order = order;
 	}
 
-	@Override
-	public int compareTo(Customer o) {
-		return this.id - o.getId();
-	}
+	
 
 	@Override
 	public String toString() {
