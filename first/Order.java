@@ -44,7 +44,8 @@ public class Order {
 
 	@Override
 	public String toString() {
-		return "Order [id=" + id + ", customer=" + customer + ", date=" + date + ", total_price=" + total_price + "]";
+		return "\nOrder [id=" + id + " customer=" + customer + " date=" + date + " total_price=" + total_price + "]";
+		
 	}
 
 	public Order(Integer id, Customer customer, LocalDate date, double total_price) {
@@ -53,6 +54,11 @@ public class Order {
 		this.customer = customer;
 		this.date = date;
 		this.total_price = total_price;
+	}
+
+	public Order() {
+		super();
+		// TODO Auto-generated constructor stub
 	}
 
 	

@@ -38,7 +38,12 @@ public class Payment {
 
 	@Override
 	public String toString() {
-		return "Payment [number=" + number + ", CVV=" + CVV + ", name_card_holder=" + name_card_holder + "]";
+		return "\nPayment [number=" + number + " CVV=" + CVV + " name_card_holder=" + name_card_holder + "]";
+	}
+
+	public Payment() {
+		super();
+		// TODO Auto-generated constructor stub
 	}
 
 }

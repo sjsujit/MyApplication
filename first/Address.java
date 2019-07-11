@@ -49,7 +49,12 @@ public class Address {
 
 	@Override
 	public String toString() {
-		return "Address [street=" + street + ", state=" + state + ", zipcode=" + zipcode + ", county=" + county + "]";
+		return "\nAddress [street=" + street + " state=" + state + " zipcode=" + zipcode + " county=" + county + "]";
+	}
+
+	public Address() {
+		super();
+		// TODO Auto-generated constructor stub
 	}
 
 }

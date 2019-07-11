@@ -62,8 +62,13 @@ public class Customer {
 
 	@Override
 	public String toString() {
-		return "Customer [id=" + id + ", firstName=" + firstName + ", lastName=" + lastName + ", payment=" + payment
-				+ ", address=" + address + "]";
+		return "Customer [id=" + id + " firstName=" + firstName + " lastName=" + lastName + " payment=" + payment
+				+ " address=" + address + "]";
+	}
+
+	public Customer() {
+		super();
+		// TODO Auto-generated constructor stub
 	}
 
 	

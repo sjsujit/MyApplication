@@ -44,37 +44,35 @@ public class Application {
 		myList.add(o4);
 		myList.add(o5);
 
-		System.out.println("Original List: ");
+		System.out.println("\n****************Original List: *******************");
 		myList.forEach(System.out::println);
-		System.out.println("Sorted List using FirstName: ");
+		System.out.println("\n****************Sorted List using FirstName: *********************");
 		Collections.sort(myList, new CompareByName());
 		myList.forEach(System.out::println);
 
-		System.out.println("Original List: ");
+		System.out.println("\n****************Original List: *******************");
 		myList.forEach(System.out::println);
-		System.out.println("Sorted List using OrderID: ");
+		System.out.println("\n*******************Sorted List using OrderID: ********************** ");
 		Collections.sort(myList, new CompareById());
 		myList.forEach(System.out::println);
 
-		System.out.println("Original List: ");
+		System.out.println("\n****************Original List: *******************");
 		myList.forEach(System.out::println);
-		System.out.println("Sorted List using Address zipcode: ");
+		System.out.println("\n**********************Sorted List using Address zipcode:***********************");
 		Collections.sort(myList, new CompareByAddress());
 		myList.forEach(System.out::println);
-		
-		System.out.println("Original List: ");
+
+		System.out.println("\n****************Original List: *******************");
 		myList.forEach(System.out::println);
-		System.out.println("Sorted List using Date: ");
+		System.out.println("\n****************************Sorted List using Date: **************************");
 		Collections.sort(myList, new CompareByDate());
 		myList.forEach(System.out::println);
-		
+
 		System.out.println("Search by firstname startwith letter S");
-		myList.stream().filter(p -> p.getCustomer().getFirstName().startsWith("S")).forEach(p ->
-		  System.out.println(p));
-		
+		myList.stream().filter(p -> p.getCustomer().getFirstName().startsWith("S")).forEach(p -> System.out.println(p));
+
 		System.out.println("Search by firstname startwith letter S");
-		myList.stream().filter(p -> p.getCustomer().getLastName().startsWith("M")).forEach(p ->
-		  System.out.println(p));
+		myList.stream().filter(p -> p.getCustomer().getLastName().startsWith("M")).forEach(p -> System.out.println(p));
 
 	}
 
