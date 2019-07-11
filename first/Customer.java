@@ -5,15 +5,19 @@ public class Customer {
 	private Integer id;
 	private String firstName;
 	private String lastName;
-	private Order order;
+	private Payment payment;
+	private Address address;
 
 	
-	public Customer(Integer id, String firstName, String lastName, Order order) {
+
+
+	public Customer(Integer id, String firstName, String lastName, Payment payment, Address address) {
 		super();
 		this.id = id;
 		this.firstName = firstName;
 		this.lastName = lastName;
-		this.order = order;
+		this.payment = payment;
+		this.address = address;
 	}
 
 	public Integer getId() {
@@ -40,20 +44,32 @@ public class Customer {
 		this.lastName = lastName;
 	}
 
-	public Order getOrder() {
-		return order;
+	public Payment getPayment() {
+		return payment;
 	}
 
-	public void setOrder(Order order) {
-		this.order = order;
+	public void setPayment(Payment payment) {
+		this.payment = payment;
+	}
+
+	public Address getAddress() {
+		return address;
+	}
+
+	public void setAddress(Address address) {
+		this.address = address;
+	}
+
+	@Override
+	public String toString() {
+		return "Customer [id=" + id + ", firstName=" + firstName + ", lastName=" + lastName + ", payment=" + payment
+				+ ", address=" + address + "]";
 	}
 
 	
 
-	@Override
-	public String toString() {
-		return "Customer [id=" + id + ", firstName=" + firstName + ", lastName=" + lastName + ", order=" + order + "]";
-	}
+	
 
+	
 }
 

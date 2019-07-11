@@ -16,42 +16,65 @@ public class Application {
 		Payment p5 = new Payment(5, 345, "Akash Kodre");
 
 		Address a1 = new Address("Hanover", "MD", 20770, "Cabel");
-		Address a2 = new Address("Huntington", "MD", 20770, "workhard");
-		Address a3 = new Address("Berkley", "MD", 20770, "whyme");
-		Address a4 = new Address("yoyo", "MD", 20770, "hourly");
-		Address a5 = new Address("madland", "MD", 20770, "rush");
+		Address a2 = new Address("Huntington", "MD", 20774, "workhard");
+		Address a3 = new Address("Berkley", "MD", 20773, "whyme");
+		Address a4 = new Address("yoyo", "MD", 20772, "hourly");
+		Address a5 = new Address("madland", "MD", 20771, "rush");
 
-		Order o1 = new Order(1001, LocalDate.parse("2019-07-01"), 2000.00, p1, a1);
-		Order o2 = new Order(1002, LocalDate.parse("2019-07-01"), 3000.00, p2, a2);
-		Order o3 = new Order(1003, LocalDate.parse("2019-07-01"), 4000.00, p3, a3);
-		Order o4 = new Order(1004, LocalDate.parse("2019-07-04"), 5000.00, p4, a4);
-		Order o5 = new Order(1005, LocalDate.parse("2019-07-05"), 6000.00, p5, a5);
+		Customer c1 = new Customer(5, "Sujit", "Jadhav", p1, a1);
 
-		Customer c1 = new Customer(5, "Sujit", "Jadhav", o1);
+		Customer c2 = new Customer(4, "Vansh", "patel", p2, a2);
 
-		Customer c2 = new Customer(4, "Vansh", "patel", o2);
+		Customer c3 = new Customer(6, "Prajna", "Mendon", p3, a3);
 
-		Customer c3 = new Customer(6, "Prajna", "Mendon", o3);
+		Customer c4 = new Customer(3, "John", "Marshall", p4, a4);
 
-		Customer c4 = new Customer(3, "John", "Marshall", o4);
+		Customer c5 = new Customer(1, "Akash", "Kodre", p5, a5);
 
-		Customer c5 = new Customer(1, "Akash", "Kodre", o5);
+		Order o1 = new Order(1001, c1, LocalDate.parse("2018-07-01"), 2000.00);
+		Order o2 = new Order(1002, c2, LocalDate.parse("2014-07-01"), 3000.00);
+		Order o3 = new Order(1003, c3, LocalDate.parse("2015-07-01"), 4000.00);
+		Order o4 = new Order(1004, c4, LocalDate.parse("2013-07-04"), 5000.00);
+		Order o5 = new Order(1005, c5, LocalDate.parse("2015-07-05"), 6000.00);
 
-		List<Customer> myList = new ArrayList<Customer>();
-		myList.add(c1);
-		myList.add(c2);
-		myList.add(c3);
-		myList.add(c4);
-		myList.add(c5);
+		List<Order> myList = new ArrayList<Order>();
+		myList.add(o1);
+		myList.add(o2);
+		myList.add(o3);
+		myList.add(o4);
+		myList.add(o5);
 
 		System.out.println("Original List: ");
 		myList.forEach(System.out::println);
-		System.out.println("Sorted List: ");
-		Collections.sort(myList, new CompareCustomer() );
+		System.out.println("Sorted List using FirstName: ");
+		Collections.sort(myList, new CompareByName());
+		myList.forEach(System.out::println);
+
+		System.out.println("Original List: ");
+		myList.forEach(System.out::println);
+		System.out.println("Sorted List using OrderID: ");
+		Collections.sort(myList, new CompareById());
+		myList.forEach(System.out::println);
+
+		System.out.println("Original List: ");
+		myList.forEach(System.out::println);
+		System.out.println("Sorted List using Address zipcode: ");
+		Collections.sort(myList, new CompareByAddress());
 		myList.forEach(System.out::println);
 		
-	 	
-	
+		System.out.println("Original List: ");
+		myList.forEach(System.out::println);
+		System.out.println("Sorted List using Date: ");
+		Collections.sort(myList, new CompareByDate());
+		myList.forEach(System.out::println);
+		
+		System.out.println("Search by firstname startwith letter S");
+		myList.stream().filter(p -> p.getCustomer().getFirstName().startsWith("S")).forEach(p ->
+		  System.out.println(p));
+		
+		System.out.println("Search by firstname startwith letter S");
+		myList.stream().filter(p -> p.getCustomer().getLastName().startsWith("M")).forEach(p ->
+		  System.out.println(p));
 
 	}
 

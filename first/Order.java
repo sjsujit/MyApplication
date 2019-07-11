@@ -4,10 +4,9 @@ import java.time.LocalDate;
 
 public class Order {
 	private Integer id;
+	private Customer customer;
 	private LocalDate date;
 	private double total_price;
-	private Payment payment;
-	private Address address;
 
 	public Integer getId() {
 		return id;
@@ -25,21 +24,6 @@ public class Order {
 		this.total_price = total_price;
 	}
 
-	public Payment getPayment() {
-		return payment;
-	}
-
-	public void setPayment(Payment payment) {
-		this.payment = payment;
-	}
-
-	public Address getAddress() {
-		return address;
-	}
-
-	public void setAddress(Address address) {
-		this.address = address;
-	}
 
 	public LocalDate getDate() {
 		return date;
@@ -49,20 +33,29 @@ public class Order {
 		this.date = date;
 	}
 
-	public Order(Integer id, LocalDate date, double total_price, Payment payment, Address address) {
-		super();
-		this.id = id;
-		this.date = date;
-		this.total_price = total_price;
-		this.payment = payment;
-		this.address = address;
+	
+	public Customer getCustomer() {
+		return customer;
+	}
+
+	public void setCustomer(Customer customer) {
+		this.customer = customer;
 	}
 
 	@Override
 	public String toString() {
-		return "Order [id=" + id + ", date=" + date + ", total_price=" + total_price + ", payment=" + payment
-				+ ", address=" + address + "]";
+		return "Order [id=" + id + ", customer=" + customer + ", date=" + date + ", total_price=" + total_price + "]";
 	}
+
+	public Order(Integer id, Customer customer, LocalDate date, double total_price) {
+		super();
+		this.id = id;
+		this.customer = customer;
+		this.date = date;
+		this.total_price = total_price;
+	}
+
+	
 }
 
 
