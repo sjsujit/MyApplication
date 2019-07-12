@@ -4,7 +4,6 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
-import java.util.stream.Stream;
 
 public class Application {
 
@@ -23,13 +22,9 @@ public class Application {
 		Address a5 = new Address("madland", "MD", 20771, "rush");
 
 		Customer c1 = new Customer(5, "Sujit", "Jadhav", p1, a1);
-
 		Customer c2 = new Customer(4, "Vansh", "patel", p2, a2);
-
 		Customer c3 = new Customer(6, "Prajna", "Mendon", p3, a3);
-
 		Customer c4 = new Customer(3, "John", "Marshall", p4, a4);
-
 		Customer c5 = new Customer(1, "Akash", "Kodre", p5, a5);
 
 		Order o1 = new Order(1001, c1, LocalDate.parse("2018-07-01"), 2000.00);
@@ -46,35 +41,32 @@ public class Application {
 		myList.add(o5);
 
 		System.out.println("\n****************Original List: *******************");
-		myList.forEach(System.out::print);
+		myList.forEach(System.out::println);
 		System.out.println("\n****************Sorted List using FirstName: *********************");
 		Collections.sort(myList, new CompareByName());
-		myList.forEach(System.out::print);
+		myList.forEach(System.out::println);
 
 		// System.out.println("\n****************Original List: *******************");
 		// myList.forEach(System.out::println);
 		System.out.println("\n*******************Sorted List using OrderID: ********************** ");
 		Collections.sort(myList, new CompareById());
-		myList.forEach(System.out::print);
+		myList.forEach(System.out::println);
 
 		// System.out.println("\n****************Original List: *******************");
 		// myList.forEach(System.out::println);
 		System.out.println("\n**********************Sorted List using Address zipcode:***********************");
 		Collections.sort(myList, new CompareByAddress());
-		myList.forEach(System.out::print);
+		myList.forEach(System.out::println);
 
 		// System.out.println("\n****************Original List: *******************");
 		// myList.forEach(System.out::println);
 		System.out.println("\n****************************Sorted List using Date: **************************");
 		Collections.sort(myList, new CompareByDate());
-		myList.forEach(System.out::print);
+		myList.forEach(System.out::println);
 
-		System.out.println("\n****************************Search List using FirstName: **************************");
-		System.out.println("Search by firstname startwith letter S");
-		myList.stream().filter(p -> p.getCustomer().getFirstName().startsWith("S")).forEach(p -> System.out.print(p));
-		System.out.println("\n****************************Search List using LastName: **************************");
-		System.out.println("Search by Lastname startwith letter M");
-		myList.stream().filter(p -> p.getCustomer().getLastName().startsWith("M")).forEach(p -> System.out.print(p));
+		SearchingOperation.searchByFirstName(myList);
+		SearchingOperation.searchByLastName(myList);
+		
 		
 
 	}

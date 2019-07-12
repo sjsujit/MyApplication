@@ -62,8 +62,8 @@ public class Customer {
 
 	@Override
 	public String toString() {
-		return "[id " + id + " firstName " + firstName + " lastName  " + lastName + " payment " + payment
-				+ " address" + address + "]  ";
+		return "Customer [  \nid " + id + "\n  firstName " + firstName + "\n  lastName  " + lastName + "\n  payment " + payment
+				+ "\n  address" + address + "]  ";
 	}
 
 	public Customer() {
