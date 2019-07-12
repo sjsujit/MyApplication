@@ -2,7 +2,6 @@ package com.MyApplication.first;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
 
 public class Application {
@@ -27,11 +26,11 @@ public class Application {
 		Customer c4 = new Customer(3, "John", "Marshall", p4, a4);
 		Customer c5 = new Customer(1, "Akash", "Kodre", p5, a5);
 
-		Order o1 = new Order(1001, c1, LocalDate.parse("2018-07-01"), 2000.00);
-		Order o2 = new Order(1002, c2, LocalDate.parse("2014-07-01"), 3000.00);
-		Order o3 = new Order(1003, c3, LocalDate.parse("2015-07-01"), 4000.00);
-		Order o4 = new Order(1004, c4, LocalDate.parse("2013-07-04"), 5000.00);
-		Order o5 = new Order(1005, c5, LocalDate.parse("2015-07-05"), 6000.00);
+		Order o1 = new Order(c1, LocalDate.parse("2018-07-01"), 2000.00);
+		Order o2 = new Order(c2, LocalDate.parse("2014-07-01"), 3000.00);
+		Order o3 = new Order(c3, LocalDate.parse("2015-07-01"), 4000.00);
+		Order o4 = new Order(c4, LocalDate.parse("2013-07-04"), 5000.00);
+		Order o5 = new Order(c5, LocalDate.parse("2015-07-05"), 6000.00);
 
 		List<Order> myList = new ArrayList<Order>();
 		myList.add(o1);
@@ -40,37 +39,50 @@ public class Application {
 		myList.add(o4);
 		myList.add(o5);
 
-		System.out.println("\n****************Original List: *******************\n\n");
-		myList.forEach(System.out::println);
-		System.out.println("\n****************Sorted List using FirstName: *********************\n\n");
-		Collections.sort(myList, new CompareByName());
-		myList.forEach(System.out::println);
-
-		// System.out.println("\n****************Original List: *******************");
-		// myList.forEach(System.out::println);
-		System.out.println("\n*******************Sorted List using OrderID: **********************\n\n");
-		Collections.sort(myList, new CompareById());
-		myList.forEach(System.out::println);
-
-		// System.out.println("\n****************Original List: *******************");
-		// myList.forEach(System.out::println);
-		System.out.println("\n**********************Sorted List using Address zipcode:**********************\n\n");
-		Collections.sort(myList, new CompareByAddress());
-		myList.forEach(System.out::println);
-
-		// System.out.println("\n****************Original List: *******************");
-		// myList.forEach(System.out::println);
-		System.out.println("\n****************************Sorted List using Date: **************************\n\n");
-		Collections.sort(myList, new CompareByDate());
-		myList.forEach(System.out::println);
-
-		System.out.println("\n****************************Search by firstname : **************************\n\n");
+		/*
+		 * System.out.println("\n****************Original List: *******************\n\n"
+		 * ); myList.forEach(System.out::println); System.out.
+		 * println("\n****************Sorted List using FirstName: *********************\n\n"
+		 * ); Collections.sort(myList, new CompareByName());
+		 * myList.forEach(System.out::println);
+		 * 
+		 * //
+		 * System.out.println("\n****************Original List: *******************");
+		 * // myList.forEach(System.out::println); System.out.
+		 * println("\n*******************Sorted List using OrderID: **********************\n\n"
+		 * ); Collections.sort(myList, new CompareById());
+		 * myList.forEach(System.out::println);
+		 * 
+		 * //
+		 * System.out.println("\n****************Original List: *******************");
+		 * // myList.forEach(System.out::println); System.out.
+		 * println("\n**********************Sorted List using Address zipcode:**********************\n\n"
+		 * ); Collections.sort(myList, new CompareByAddress());
+		 * myList.forEach(System.out::println);
+		 * 
+		 * //
+		 * System.out.println("\n****************Original List: *******************");
+		 * // myList.forEach(System.out::println); System.out.
+		 * println("\n****************************Sorted List using Date: **************************\n\n"
+		 * ); Collections.sort(myList, new CompareByDate());
+		 * myList.forEach(System.out::println);
+		 */
+		
+		System.out.println("\n****************************Sort by firstname : **************************\n\n");
+		SearchingOperation.CompareByName(myList);
+		System.out.println("\n****************************Sort by Order Id : **************************\n\n");
+		SearchingOperation.CompareById(myList);
+		System.out.println("\n****************************Sort by Date : **************************\n\n");
+		SearchingOperation.CompareByDate(myList);
+		System.out.println("\n****************************Sort by Address using zipcode: **************************\n\n");
+		SearchingOperation.CompareByAddress(myList);
+		System.out.println("\n****************************Search by firstname starts with S : **************************\n\n");
 		SearchingOperation.searchByFirstName(myList);
-		System.out.println("\n****************************Search by lastname : **************************\n\n");
+		System.out.println("\n****************************Search by Id **************************\n\n");
+		SearchingOperation.searchById(myList);
+		System.out.println("\n****************************Search by lastname starts with M: **************************\n\n");
 		SearchingOperation.searchByLastName(myList);
-		System.out.println("\n****************************Search by orderID : **************************\n\n");
-		SearchingOperation.searchByOrderId(myList);
-		System.out.println("\n****************************Search by ZipCode : **************************\n\n");
+		System.out.println("\n****************************Search by ZipCode 20770: **************************\n\n");
 		SearchingOperation.searchByZipcode(myList);
 
 	}

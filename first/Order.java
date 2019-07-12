@@ -1,16 +1,13 @@
 package com.MyApplication.first;
 
 import java.time.LocalDate;
+import java.util.UUID;
 
 public class Order {
-	private Integer id;
+	private UUID id;
 	private Customer customer;
 	private LocalDate date;
 	private double totalPrice;
-
-	public Integer getId() {
-		return id;
-	}
 
 	public double getTotalPrice() {
 		return totalPrice;
@@ -20,9 +17,6 @@ public class Order {
 		this.totalPrice = totalPrice;
 	}
 
-	public void setId(Integer id) {
-		this.id = id;
-	}
 
 	public LocalDate getDate() {
 		return date;
@@ -42,22 +36,30 @@ public class Order {
 	}
 
 
-	public Order(Integer id, Customer customer, LocalDate date, double totalPrice) {
-		super();
+	public UUID getId() {
+		return id;
+	}
+
+	public void setId(UUID id) {
 		this.id = id;
+	}
+
+	public Order(Customer customer, LocalDate date, double totalPrice) {
+		super();
+		this.id = UUID.randomUUID();
 		this.customer = customer;
 		this.date = date;
 		this.totalPrice = totalPrice;
 	}
 
+	@Override
+	public String toString() {
+		return "Order [id=" + id + "customer=" + customer + ", date=" + date + ", totalPrice=" + totalPrice + "]";
+	}
+
 	public Order() {
 		super();
 		// TODO Auto-generated constructor stub
-	}
-
-	@Override
-	public String toString() {
-		return "Order [id=" + id + ", customer=" + customer + ", date=" + date + ", totalPrice=" + totalPrice + "]";
 	}
 
 	
