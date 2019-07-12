@@ -8,11 +8,11 @@ public class Application {
 
 	public static void main(String[] args) {
 
-		Payment p1 = new Payment(1, 123, "Sujit Jadhav");
-		Payment p2 = new Payment(2, 456, "Vansh Patel");
-		Payment p3 = new Payment(3, 789, "Prajna Mendon");
-		Payment p4 = new Payment(4, 234, "John Marshall");
-		Payment p5 = new Payment(5, 345, "Akash Kodre");
+		Payment p1 = new Payment(1, (short) 123, "Sujit Jadhav", LocalDate.parse("2020-07-02"));
+		Payment p2 = new Payment(2, (short) 456, "Vansh Patel", LocalDate.parse("2022-07-10"));
+		Payment p3 = new Payment(3, (short) 789, "Prajna Mendon", LocalDate.parse("2020-06-29"));
+		Payment p4 = new Payment(4, (short) 234, "John Marshall", LocalDate.parse("2023-03-23"));
+		Payment p5 = new Payment(5, (short) 345, "Akash Kodre", LocalDate.parse("2024-05-23"));
 
 		Address a1 = new Address("Hanover", "MD", 20770, "Cabel");
 		Address a2 = new Address("Huntington", "MD", 20774, "workhard");
@@ -84,6 +84,7 @@ public class Application {
 		SearchingOperation.searchByLastName(myList);
 		System.out.println("\n****************************Search by ZipCode 20770: **************************\n\n");
 		SearchingOperation.searchByZipcode(myList);
+		
 
 	}
 

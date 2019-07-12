@@ -46,5 +46,15 @@ public class SearchingOperation {
 		orderList.stream().filter(p -> p.getCustomer().getAddress().getZipcode() == 20770)
 				.forEach(p -> System.out.print(p));
 	}
+	/*
+	 * public void searchByName (List<Order> orders, String givenSearchString) {
+	 * List<Order> found = orders.stream().filter(order ->
+	 * order.getCustomer().getFirstName().contains(givenSearchString)
+	 * ||order.getCustomer().getLastName().contains(givenSearchString)).collect(
+	 * Collectors.toList());
+	 * 
+	 * }
+	 */
+	
 
 }

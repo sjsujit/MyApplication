@@ -1,10 +1,12 @@
 package com.MyApplication.first;
 
+import java.time.LocalDate;
+
 public class Payment {
 	private Integer number;
-	private Integer CVV;
+	private short CVV;
 	private String nameCardHolder;
-
+	private LocalDate validTill;
 
 	public Integer getNumber() {
 		return number;
@@ -14,14 +16,21 @@ public class Payment {
 		this.number = number;
 	}
 
-	public Integer getCVV() {
+	public short getCVV() {
 		return CVV;
 	}
 
-	public void setCVV(Integer cVV) {
+	public void setCVV(short cVV) {
 		CVV = cVV;
 	}
 
+	public LocalDate getValidTill() {
+		return validTill;
+	}
+
+	public void setValidTill(LocalDate validTill) {
+		this.validTill = validTill;
+	}
 
 	public String getNameCardHolder() {
 		return nameCardHolder;
@@ -31,16 +40,18 @@ public class Payment {
 		this.nameCardHolder = nameCardHolder;
 	}
 
-	public Payment(Integer number, Integer cVV, String nameCardHolder) {
+	public Payment(Integer number, short cVV, String nameCardHolder, LocalDate validTill) {
 		super();
 		this.number = number;
 		CVV = cVV;
 		this.nameCardHolder = nameCardHolder;
+		this.validTill = validTill;
 	}
 
 	@Override
 	public String toString() {
-		return "Payment [number=" + number + ", CVV=" + CVV + ", nameCardHolder=" + nameCardHolder + "]";
+		return "Payment [number=" + number + ", CVV=" + CVV + ", nameCardHolder=" + nameCardHolder + ", validTill="
+				+ validTill + "]";
 	}
 
 	public Payment() {
