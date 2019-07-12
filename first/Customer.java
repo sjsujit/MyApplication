@@ -8,9 +8,6 @@ public class Customer {
 	private Payment payment;
 	private Address address;
 
-	
-
-
 	public Customer(Integer id, String firstName, String lastName, Payment payment, Address address) {
 		super();
 		this.id = id;
@@ -62,8 +59,8 @@ public class Customer {
 
 	@Override
 	public String toString() {
-		return "Customer [  \nid: " + id + "\n  firstName: " + firstName + "\n  lastName:  " + lastName + "\n  payment: " + payment
-				+ "\n  address" + address + "]  ";
+		return "Customer [  \nid: " + id + "\n  firstName: " + firstName + "\n  lastName:  " + lastName
+				+ "\n  payment: " + payment + "\n  address" + address + "]  ";
 	}
 
 	public Customer() {
@@ -71,10 +68,4 @@ public class Customer {
 		// TODO Auto-generated constructor stub
 	}
 
-	
-
-	
-
-	
 }
-
