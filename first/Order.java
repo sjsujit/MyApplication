@@ -6,24 +6,23 @@ public class Order {
 	private Integer id;
 	private Customer customer;
 	private LocalDate date;
-	private double total_price;
+	private double totalPrice;
 
 	public Integer getId() {
 		return id;
 	}
 
+	public double getTotalPrice() {
+		return totalPrice;
+	}
+
+	public void setTotalPrice(double totalPrice) {
+		this.totalPrice = totalPrice;
+	}
+
 	public void setId(Integer id) {
 		this.id = id;
 	}
-
-	public double getTotal_price() {
-		return total_price;
-	}
-
-	public void setTotal_price(double total_price) {
-		this.total_price = total_price;
-	}
-
 
 	public LocalDate getDate() {
 		return date;
@@ -42,23 +41,23 @@ public class Order {
 		this.customer = customer;
 	}
 
-	@Override
-	public String toString() {
-		return "Order:[\n id: " + id + "\n  customer:  " + customer + "\n  date:  " + date + "\n  total_price:  " + total_price + "]  ";
-		
-	}
 
-	public Order(Integer id, Customer customer, LocalDate date, double total_price) {
+	public Order(Integer id, Customer customer, LocalDate date, double totalPrice) {
 		super();
 		this.id = id;
 		this.customer = customer;
 		this.date = date;
-		this.total_price = total_price;
+		this.totalPrice = totalPrice;
 	}
 
 	public Order() {
 		super();
 		// TODO Auto-generated constructor stub
+	}
+
+	@Override
+	public String toString() {
+		return "Order [id=" + id + ", customer=" + customer + ", date=" + date + ", totalPrice=" + totalPrice + "]";
 	}
 
 	
