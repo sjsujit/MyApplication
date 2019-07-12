@@ -49,7 +49,7 @@ public class Address {
 
 	@Override
 	public String toString() {
-		return "[street " + street + " state " + state + " zipcode " + zipcode + " county " + county + "]   ";
+		return "[street: " + street + " state: " + state + " zipcode: " + zipcode + " county: " + county + "]   ";
 		//return String.format("(%s %s %d %s)", street , state , zipcode , county );
 	}
 

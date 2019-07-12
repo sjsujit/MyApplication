@@ -38,7 +38,7 @@ public class Payment {
 
 	@Override
 	public String toString() {
-		return "[number " + number + " CVV " + CVV + " name_card_holder " + name_card_holder + "]   ";
+		return "[number: " + number + " CVV: " + CVV + " name_card_holder: " + name_card_holder + "]   ";
 		//return String.format("(%d   %d   %s)", number , CVV , name_card_holder);
 	}
 
