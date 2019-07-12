@@ -44,7 +44,7 @@ public class Order {
 
 	@Override
 	public String toString() {
-		return "\nOrder [id=" + id + " customer=" + customer + " date=" + date + " total_price=" + total_price + "]";
+		return "   Order:[id: " + id + "  customer:  " + customer + "  date:  " + date + "  total_price:  " + total_price + "\n]  ";
 		
 	}
 
