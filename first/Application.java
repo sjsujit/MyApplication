@@ -64,9 +64,12 @@ public class Application {
 		Collections.sort(myList, new CompareByDate());
 		myList.forEach(System.out::println);
 
+		System.out.println("\n****************************Search by firstname : **************************");
 		SearchingOperation.searchByFirstName(myList);
+		System.out.println("\n****************************Search by lastname : **************************");
 		SearchingOperation.searchByLastName(myList);
-		
+		System.out.println("\n****************************Search by orderID : **************************");
+		SearchingOperation.searchByOrderId(myList);
 		
 
 	}

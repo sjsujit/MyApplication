@@ -15,5 +15,8 @@ public class SearchingOperation {
 	static void searchByLastName(List<Order> orderList) {
 		orderList.stream().filter(p -> p.getCustomer().getLastName().startsWith("M")).forEach(p -> System.out.print(p));
 	}
+	static void searchByOrderId(List<Order> orderList) {
+		orderList.stream().filter(p-> p.getId()==1001).forEach(p-> System.out.print(p));
+	}
 	
 }
