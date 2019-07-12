@@ -2,6 +2,7 @@ package com.MyApplication.first;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 
 public class Application {
@@ -26,12 +27,12 @@ public class Application {
 		Customer c4 = new Customer(3, "John", "Marshall", p4, a4);
 		Customer c5 = new Customer(1, "Akash", "Kodre", p5, a5);
 
-		Order o1 = new Order(c1, LocalDate.parse("2018-07-01"), 2000.00);
-		Order o2 = new Order(c2, LocalDate.parse("2014-07-01"), 3000.00);
-		Order o3 = new Order(c3, LocalDate.parse("2015-07-01"), 4000.00);
-		Order o4 = new Order(c4, LocalDate.parse("2013-07-04"), 5000.00);
-		Order o5 = new Order(c5, LocalDate.parse("2015-07-05"), 6000.00);
-
+		Order o1 = new Order(c1, LocalDate.parse("2018-07-01"),null);
+		Order o2 = new Order(c2, LocalDate.parse("2014-07-01"),null);
+		Order o3 = new Order(c3, LocalDate.parse("2015-07-01"),null);
+		Order o4 = new Order(c4, LocalDate.parse("2013-07-04"),null);
+		Order o5 = new Order(c5, LocalDate.parse("2015-07-05"),null);
+		
 		List<Order> myList = new ArrayList<Order>();
 		myList.add(o1);
 		myList.add(o2);
@@ -67,7 +68,6 @@ public class Application {
 		 * ); Collections.sort(myList, new CompareByDate());
 		 * myList.forEach(System.out::println);
 		 */
-		
 		System.out.println("\n****************************Sort by firstname : **************************\n\n");
 		SearchingOperation.CompareByName(myList);
 		System.out.println("\n****************************Sort by Order Id : **************************\n\n");
